@@ -1,0 +1,29 @@
+nav.navbar.navbar-top.navbar-fixed-top.yamm(role="navigation")
+    .container
+        .navbar-header
+            button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar-collapse")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href="/") РосКонкурс
+        .collapse.navbar-collapse#navbar-collapse
+            ul.nav.navbar-nav.visible-sm.visible-xs
+                each nav in mainNav
+                    li(class=(path == nav.path)?'active':'')
+                        a(href="#{nav.path}") #{nav.title}
+            ul.nav.navbar-nav.hidden-sm.hidden-xs
+                each nav in mainNav
+                    li(class=(path == nav.path)?'active':'')
+                        a(href="#{nav.path}") #{nav.title}
+            ul.nav.navbar-nav.pull-right.hidden-sm.hidden-xs
+                if (user)
+                    li(class=(path == '/profile')?'active':'')
+                        a(href="/profile", class="btn btn-login navbar-btn") #{user.username}
+                    li
+                        a(href="", onclick="$('<form method=POST action=/logout>').submit();return false", class="btn btn-login navbar-btn") Выйти
+                else
+                    li(class=(path == '/login')?'active':'')
+                        a(href="/login", class="btn btn-login navbar-btn")
+                            i.icon-user
+                            | &nbsp;Войти

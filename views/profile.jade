@@ -1,0 +1,12 @@
+extends layout
+block title
+    | Личный кабинет
+block content
+    .container
+        .page-header
+            h1 Личный кабинет
+        dl
+            dt username
+            dd= user.username
+            dt role
+            dd= user.role

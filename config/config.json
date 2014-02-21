@@ -1,0 +1,30 @@
+{
+  "port": 3000,
+  "mongoose": {
+    "uri": "mongodb://localhost/expressapp",
+    "options": {
+      "server": {
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "session": {
+    "secret": "→°°°SECRET°°°←",
+    "key": "sid",
+    "cookie": {
+      "path": "/",
+      "httpOnly": true,
+      "maxAge": null
+    }
+  },
+  "navigation": {
+    "main": [
+      { "title": "Главная", "path": "/" },
+      { "title": "Конкурсы", "path": "/catalog" },
+      { "title": "О нас", "path": "/about" },
+      { "title": "Информация", "path": "/info" }
+    ]
+  }
+}

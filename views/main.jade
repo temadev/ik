@@ -1,0 +1,187 @@
+extends layout
+block title
+    = title
+block content
+    header
+        .header-title
+            h1 Конкурсы России 2014
+            p.lead Конкурсы для учителей и преподавателей образовательных учреждений всех уровней и типов, конкурсы для педагогов ДОУ
+        #headerCarousel.carousel.slide.hidden-xs
+            .carousel-inner
+                #headerSlide2.item.active
+                    .container
+                        img.animation.move-left(src="images/slide-img-1.png", alt="")
+                        .header-title.title-green
+                            h4.animation.move-top
+                                small 16.09.2013 - 20.09.2013
+                                | Конкурс выпускных мероприятий и программ в ДОУ
+                            span.animation.move-right.badge 20% скидка
+                            p.animation.move-bottom Разработка игровой программы, мероприятия, занятия или урока
+                #headerSlide1.item
+                    .container
+                        .header-title.animation.move-top
+                            h1 Еще слайд
+            a.left.carousel-control(href="#headerCarousel", data-slide="prev"): i.icon-angle-left.icon-2x
+            a.right.carousel-control(href="#headerCarousel", data-slide="next"): i.icon-angle-right.icon-2x
+        .header-description
+            a.btn.btn-lg.btn-header Здоровье
+            a.btn.btn-lg.btn-header Патриотизм
+            a.btn.btn-lg.btn-header Профориентация
+            a.btn.btn-lg.btn-header Краеведение
+            a.btn.btn-lg.btn-header Литература
+            a.btn.btn-lg.btn-header Творчество
+            br.hidden-xs
+            a.btn.btn-lg.btn-header Экология
+            a.btn.btn-lg.btn-header Спорт
+            a.btn.btn-lg.btn-header Семья
+            a.btn.btn-lg.btn-header Воспитание
+            a.btn.btn-lg.btn-header ОВЗ
+            a.btn.btn-lg.btn-header Детские конкурсы
+            a.btn.btn-lg.btn-header Здоровье
+    #block-courses.content-block
+        .container
+            .page-header
+                span.icon-stack.icon-4x
+                    i.icon-circle.icon-stack-base
+                    i.icon-calendar.icon-light
+                h2 Ближайшие мероприятия
+                ul.nav.btn-group
+                    li.btn.btn-default.active: a(href="#one", data-toggle="tab") по типу
+                    li.btn.btn-default: a(href="#two", data-toggle="tab") по дате
+            .tab-content
+                #one.tab-pane.fade.active.in
+                    #accordion1.panel-group
+                        .row
+                            .col-md-4
+                                .panel.panel-success
+                                    .panel-heading.accordion-toggle(data-toggle="collapse", data-parent="#accordion1", data-target="#collapse11")
+                                        h4 Духовно-нравственное воспитание
+                                    #collapse11.list-group.panel-collapse.collapse.in
+                                        a.list-group-item(href="")
+                                            strong 01.01.2014 - 01.03.2014
+                                            | Исследовательский конкурс «Зимний народный и православный календарь»
+                #two.tab-pane.fade
+                    #accordion2.panel-group
+                        .panel.panel-success
+                            .panel-heading.accordion-toggle(data-toggle="collapse", data-parent="#accordion2", data-target="#collapse21")
+                                h4 Февраль 2014
+                            #collapse21.list-group.panel-collapse.collapse.in
+                                .row
+                                    .col-md-4
+                                        a.list-group-item(href="")
+                                            strong 01.01.2014 - 01.03.2014
+                                            | Исследовательский конкурс «Зимний народный и православный календарь»
+    #block-customers.content-block.block-color.block-carousel
+        .page-header
+            span.icon-stack.icon-4x
+                i.icon-circle.icon-stack-base
+                i.icon-comment.icon-light
+        #commentCarousel.carousel.slide
+            ol.carousel-indicators
+                li.active(data-target="#commentCarousel", data-slide-to="0")
+                li(data-target="#commentCarousel", data-slide-to="1")
+                li(data-target="#commentCarousel", data-slide-to="2")
+                li(data-target="#commentCarousel", data-slide-to="3")
+            .carousel-inner
+                .item.active
+                    .container
+                        p «Организация семинара проведена на должном уровне. Спасибо за оповещение, схему проезда, решение всех организационных вопросов. Очень актуальна тема семинара "Глобальные изменения по НДС с 1 октября 2011 года" ...»
+                        small — Станькова Л.Б., ООО «Инстройпроект»
+                .item
+                    .container
+                        p «Спасибо большое! Информация вся преподавалась очень интересно, доступно, с пояснениями. Это большая помощь и поддержка для главного бухгалтера при составлении отчетности. Прошу организовать семинар по ПБУ-22 и ПБУ-2 ...»
+                        small — Стешенко Т. А., ООО «АССМАНН Бератен + Планен»
+                .item
+                    .container
+                        p «Я очень довольна тем, что попала на семинар в ИКТ. Сервиc не навязчивый, сотрудники ИКТ доброжелательные и приветливые. Семинары проходят в дружеской обстановке ...»
+                        small — Косолапова Ю.В., ЗАО ГУ «ИС»
+    #block-info.content-block
+        .container
+            .row
+                .col-lg-7
+                    .panel-news
+                        #newsCarousel.carousel.slide
+                            ol.carousel-indicators
+                                li.active(data-target="#newsCarousel", data-slide-to="0")
+                                li(data-target="#newsCarousel", data-slide-to="1")
+                                li(data-target="#newsCarousel", data-slide-to="2")
+                            .carousel-inner
+                                .item.active
+                                    a.caption(href="")
+                                        h4 Продолжается набор на бесплатное обучение
+                                        p 15.01.2013
+                                .item
+                                    a.caption(href="")
+                                        h4 Стартовало бесплатное обучение для малого бизнеса
+                                        p 15.01.2013
+                                .item
+                                    a.caption(href="")
+                                        h4 Бесплатное обучение для малого бизнеса!
+                                        p 15.01.2013
+                        .news-list
+                            .row
+                                .col-lg-7.col-md-7
+                                    .news-item
+                                        small 29.01.2013
+                                        p.news-title: a(href="") Продолжается набор на бесплатное обучение
+                                    .news-item
+                                        small 29.01.2013
+                                        p.news-title: a(href="") Стартовало бесплатное обучение для малого бизнеса
+                                    .news-item
+                                        small 29.01.2013
+                                        p.news-title: a(href="") Бесплатное обучение для малого бизнеса!
+                                .col-lg-5.col-md-5
+                                    .news-item
+                                        small 29.01.2013
+                                        p.news-title: a(href="") Разработка эффективной системы оплаты труда: стратегия, дизайн, грейдирование, система вознаграждения по KPI, льготы и нематериальная мотивация
+                                    .news-item
+                                        small 29.01.2013
+                                        p.news-title: a(href="") Школа рекрутера
+                .col-lg-5
+                    .panel.panel-poll
+                        .panel-heading
+                            h3 Что для Вас приоритетно при выборе обучения?
+                        .panel-body
+                            form
+                                .radio
+                                    label
+                                        input#optionsRadios1(type="radio", name="optionsRadios", value="option1")
+                                        | Документ государственного образца
+                                .radio
+                                    label
+                                        input#optionsRadios2(type="radio", name="optionsRadios", value="option2")
+                                        | Сертификат о повышении квалификации
+                                .radio
+                                    label
+                                        input#optionsRadios3(type="radio", name="optionsRadios", value="option3")
+                                        | Документы не важны, главное - знания
+                                hr
+                                p
+                                    a.btn.btn-warning(href="#") Голосовать
+                                    a.btn.btn-default(href="#") Результаты
+                    .panel.panel-articles.panel-info
+                        .panel-heading
+                            h3 Документы и материалы
+                        .list-group
+                            a.list-group-item(href="") Типовой договор на оказание услуг
+                            a.list-group-item(href="") Переход на МСФО: неизбежные хлопоты
+                            a.list-group-item(href="") МСФО - все, что нужно знать бухгалтеру
+                            a.list-group-item(href="") Управленческий учет: чему и где учиться
+                            a.list-group-item(href="") Бухгалтер востребован всегда!
+                            a.list-group-item(href="") Управленческий учет для бухгалтера
+    #block-seo.content-block
+        .container
+            .page-header
+                h1 Проведение Всероссийских конкурсов
+
+            #seo
+                p
+                    | Институт повышения квалификации ИКТ более 15 лет занимает свою нишу на рынке российского бизнес-образования. Основным направлением деятельности ИКТ является повышение квалификации
+                    a#seo-show(href="#seo-text", data-toggle="collapse") специалистов по направлениям ...
+
+                #seo-text.collapse
+                    p Институт повышения квалификации ИКТ более 15 лет занимает свою нишу на рынке российского бизнес-образования. Основным направлением деятельности ИКТ является повышение квалификации специалистов по направлениям: управление персоналом, маркетинг, реклама, pr, менеджмент, продажи, сбыт, логистика, бухгалтерский учет, анализ, аудит, налогообложение, финансы, правовое регулирование предпринимательской деятельности, корпоративное обучение, обучение специалистов малого бизнеса. Повышение квалификации персонала всегда актуально для любой компании. Бизнес-среда непрерывно развивается, изменяются законы, нормативные документы, внедряются новые технологии. Институт ИКТ, предлагая качественное бизнес-обучение на открытых и корпоративных учебных курсах, тренингах, практических семинарах, помогает уверенно идти в ногу со временем.
+                    h2 Курсы для менеджера
+                    p Трудно переоценить роль менеджера в любой компании. Именно от его квалификации часто зависит производительность труда десятков людей. Обучение менеджеров - одна из ключевых задач на пути к стабильной и продуктивной работе компании. Поэтому курсы менеджера неизменно пользуются популярностью, особенно курсы менеджеров по продажам. В опрос-анкетах многие слушатели с удивлением отмечают, что обучение продажам открыло им глаза на вроде бы очевидные моменты в профессии, которые ранее ускользали от их внимания. Обучение менеджменту включает в себя как теоретические занятия, так и менеджмент тренинги. В процессе тренинга менеджер приобретает теоретические знания, подкрепленные практическими примерами, взятыми из повседневной работы менеджеров. Умение продавать невозможно развить без определенных знаний рекламы.
+    .content-block.block-map
+        #map.google-map-canvas

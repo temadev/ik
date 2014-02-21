@@ -1,0 +1,7 @@
+extends layout
+block title
+    = error.message
+block content
+    section.container
+        h2 Извините произошла ошибка
+        p= error.message

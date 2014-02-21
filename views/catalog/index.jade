@@ -1,0 +1,37 @@
+extends ../layout
+block title
+    | Конкурсы
+block content
+    header
+        .container
+            .page-title
+                h2 Конкурсы
+                p Конкурсы проводится в целях привлечения внимания общества к вопросам развития культуры, сохранения культурно-исторического наследия
+    #block-detail.content-block
+        .container
+            .row
+                .col-lg-9
+                    h2 Рекомендуемые конкурсы
+                    hr
+                    table.table.table-striped
+                        thead
+                            tr
+                                th Название конкурса
+                                th Даты&nbsp;проведения
+                                th
+                                th
+                        tbody
+                            each product in products
+                                tr
+                                    .caption
+                                        h3: a(href="/product/#{product.url}")= product.title
+                                        p= product.description
+                                        p #{product.price} руб.
+                                        p= product.start
+                                        p= product.end
+                .col-lg-3
+                    .panel.panel-success
+                        .panel-heading: h4 Блоки конкурсов
+                        .list-group
+                            each section in sections
+                                li(class="list-group-item"): a(href="/catalog/#{section.url}") #{section.title}

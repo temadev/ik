@@ -1,0 +1,16 @@
+extends ../layout
+block title
+    | Войти
+block content
+    .container
+        .page-header
+            h1 Войти
+        form(role="form", name="login-form", method="POST")
+            .form-group
+                label(for="email") Email
+                input.form-control#email(type="email", name="email", placeholder="Введите email")
+            .form-group
+                label(for="password") Пароль
+                input.form-control#password(type="password", name="password", placeholder="Password")
+            button.btn.btn-default(type="submit", data-loading-text="Отправляю...") Войти
+            span.help-block.error

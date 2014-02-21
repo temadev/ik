@@ -1,0 +1,29 @@
+doctype 5
+html
+    head
+        base(href="/")
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        title
+            block title
+        meta(name="description", content="")
+        meta(name="viewport", content="width=device-width")
+        link(rel="stylesheet", href="styles/main.css")
+        script(src="bower_components/modernizr/modernizr.js")
+    body
+        include nav
+        block content
+        footer
+            .container
+                address
+                    h5 РосКонкурс
+                        small
+                            | Конкурсы для учителей и преподавателей образовательных учреждений<br>
+                            | всех уровней и типов, конкурсы для педагогов ДОУ
+                    p
+                        | 125171, Россия, Москва, Ленинградское ш.,16 стр. 3<br>
+                        | Телефон: (495) 786-22-35<br>
+                        | Факс: (499) 150-92-13<br>
+                        | Email:&nbsp;
+                        a(href="") info@cvsi.ru
+        script(src="bower_components/requirejs/require.js", data-main="scripts/main")
