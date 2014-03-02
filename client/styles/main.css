@@ -273,7 +273,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -294,12 +294,12 @@ textarea {
   background-image: none;
 }
 a {
-  color: #428bca;
+  color: #1192d3;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #0b618c;
   text-decoration: underline;
 }
 a:focus {
@@ -373,7 +373,7 @@ cite {
   color: #999999;
 }
 .text-primary {
-  color: #428bca;
+  color: #1192d3;
 }
 .text-warning {
   color: #c09853;
@@ -408,7 +408,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
 }
@@ -1884,8 +1884,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #1192d3;
+  border-color: #0f82bb;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1893,8 +1893,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  background-color: #0e78ad;
+  border-color: #0b5a83;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -1916,8 +1916,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #1192d3;
+  border-color: #0f82bb;
 }
 .btn-warning {
   color: #ffffff;
@@ -1995,8 +1995,8 @@ fieldset[disabled] .btn-danger.active {
 }
 .btn-success {
   color: #ffffff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #6dda6d;
+  border-color: #59d559;
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -2004,8 +2004,8 @@ fieldset[disabled] .btn-danger.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: #ffffff;
-  background-color: #47a447;
-  border-color: #398439;
+  background-color: #4cd24c;
+  border-color: #31c031;
 }
 .btn-success:active,
 .btn-success.active,
@@ -2027,8 +2027,8 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #6dda6d;
+  border-color: #59d559;
 }
 .btn-info {
   color: #ffffff;
@@ -2068,7 +2068,7 @@ fieldset[disabled] .btn-info.active {
   border-color: #46b8da;
 }
 .btn-link {
-  color: #428bca;
+  color: #1192d3;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
@@ -2089,7 +2089,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #2a6496;
+  color: #0b618c;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -2827,7 +2827,7 @@ input[type="button"].btn-block {
 .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #ffffff;
-  background-color: #428bca;
+  background-color: #1192d3;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -2835,7 +2835,7 @@ input[type="button"].btn-block {
   color: #ffffff;
   text-decoration: none;
   outline: 0;
-  background-color: #428bca;
+  background-color: #1192d3;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -3308,7 +3308,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #428bca;
+  border-color: #1192d3;
 }
 .nav .nav-divider {
   height: 1px;
@@ -3380,7 +3380,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #428bca;
+  background-color: #1192d3;
 }
 .nav-stacked > li {
   float: none;
@@ -3443,12 +3443,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 .nav .caret {
-  border-top-color: #428bca;
-  border-bottom-color: #428bca;
+  border-top-color: #1192d3;
+  border-bottom-color: #1192d3;
 }
 .nav a:hover .caret {
-  border-top-color: #2a6496;
-  border-bottom-color: #2a6496;
+  border-top-color: #0b618c;
+  border-bottom-color: #0b618c;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -4043,8 +4043,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #1192d3;
+  border-color: #1192d3;
   cursor: default;
 }
 .pagination > .disabled > span,
@@ -4173,18 +4173,18 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #808080;
 }
 .label-primary {
-  background-color: #428bca;
+  background-color: #1192d3;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #3071a9;
+  background-color: #0d71a4;
 }
 .label-success {
-  background-color: #5cb85c;
+  background-color: #6dda6d;
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
-  background-color: #449d44;
+  background-color: #44d044;
 }
 .label-info {
   background-color: #5bc0de;
@@ -4236,7 +4236,7 @@ a.badge:focus {
 }
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #428bca;
+  color: #1192d3;
   background-color: #ffffff;
 }
 .nav-pills > li > a > .badge {
@@ -4294,7 +4294,7 @@ a.list-group-item.active > .badge,
 }
 a.thumbnail:hover,
 a.thumbnail:focus {
-  border-color: #428bca;
+  border-color: #1192d3;
 }
 .thumbnail > img {
   margin-left: auto;
@@ -4425,7 +4425,7 @@ a.thumbnail:focus {
   font-size: 12px;
   color: #ffffff;
   text-align: center;
-  background-color: #428bca;
+  background-color: #1192d3;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -4446,7 +4446,7 @@ a.thumbnail:focus {
   animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
-  background-color: #5cb85c;
+  background-color: #6dda6d;
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
@@ -4552,8 +4552,8 @@ a.list-group-item:focus {
 .list-group-item.active:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #1192d3;
+  border-color: #1192d3;
 }
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,
@@ -4563,7 +4563,7 @@ a.list-group-item:focus {
 .list-group-item.active .list-group-item-text,
 .list-group-item.active:hover .list-group-item-text,
 .list-group-item.active:focus .list-group-item-text {
-  color: #e1edf7;
+  color: #b7e3f9;
 }
 .list-group-item-heading {
   margin-top: 0;
@@ -4682,18 +4682,18 @@ a.list-group-item:focus {
   border-bottom-color: #dddddd;
 }
 .panel-primary {
-  border-color: #428bca;
+  border-color: #1192d3;
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #1192d3;
+  border-color: #1192d3;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #428bca;
+  border-top-color: #1192d3;
 }
 .panel-primary > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #428bca;
+  border-bottom-color: #1192d3;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -7419,16 +7419,18 @@ h3 {
   font-size: 21px;
 }
 fieldset {
+  margin-top: 10px;
   margin-bottom: 15px;
 }
 legend {
   font-weight: 500;
   border: none;
-  color: #056DA2;
-  margin-bottom: 10px;
+  color: #056da2;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .nav-tabs {
-  margin: 20px 0 30px;
+  margin: 20px 0 0;
 }
 .nav-tabs > li > a {
   font-size: 16px;
@@ -7437,6 +7439,12 @@ legend {
   font-weight: bold;
   border-radius: 0;
   color: #999;
+}
+.tab-content {
+  padding: 20px 30px 30px 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
 }
 .well {
   background: #eee;
@@ -7504,7 +7512,7 @@ header {
 }
 .navbar-top {
   font-size: 1em;
-  background-color: #1192d3;
+  background-color: #0f7eb7;
   border-radius: 0;
   border-bottom-color: #0f7db4;
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.15);
@@ -7522,9 +7530,9 @@ header {
   margin-left: 0;
   padding: 15px;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.65em;
   font-weight: bold;
-  background-color: #0f7db4;
+  background-color: #0e75a9;
 }
 .navbar-top .navbar-nav > li > a {
   color: #b3e1f8;
@@ -7547,28 +7555,42 @@ header {
 .navbar-top .navbar-nav > .active > a,
 .navbar-top .navbar-nav > .active > a:hover {
   color: #fff;
-  background-color: #0f7db4;
+  background-color: #0e75a9;
 }
 .navbar-top .navbar-toggle {
-  border-color: #0f7db4;
+  border-color: #0e75a9;
 }
 .navbar-top .navbar-toggle span {
   background: #b3e1f8;
 }
 .navbar-top .navbar-toggle:hover {
   color: #fff;
-  background-color: #0f7db4;
+  background-color: #0e75a9;
 }
 .navbar-top .navbar-nav .btn-login {
   margin: 9px 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: .85em;
   text-transform: none;
   font-weight: normal;
-  background-color: #0f7db4 !important;
 }
-.navbar-top .navbar-nav .btn-login:hover {
+.navbar-top .navbar-nav .btn-login.btn-success {
+  background-color: #6dda6d !important;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.07);
+}
+.navbar-top .navbar-nav .btn-login.btn-success:hover {
+  background-color: #48d148 !important;
+}
+.navbar-top .navbar-nav .btn-login.btn-primary {
+  background-color: #1192d3 !important;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.07);
   border-color: #fff;
+}
+.navbar-top .navbar-nav .btn-login.btn-primary:hover {
+  background-color: #0e75a9 !important;
 }
 .yamm-content ul li p strong {
   font-size: 21px;
@@ -7615,7 +7637,7 @@ header {
   color: #fff;
   box-shadow: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.07);
-  background: #6DDA6D;
+  background: #6dda6d;
 }
 #headerCarousel {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
@@ -7881,7 +7903,7 @@ footer {
 footer h5 {
   margin-bottom: 30px;
   font-size: 1.6em;
-  color: #056DA2;
+  color: #056da2;
 }
 footer h5 small {
   display: block;
@@ -7892,21 +7914,55 @@ footer p {
   color: #666;
 }
 /* 08. DETAIL SECTION ================================================== */
+#block-detail {
+  background: #fafafa;
+}
 #block-detail h1 {
-  font-size: 2.3em;
+  font-size: 2.1em;
   line-height: 1;
-  margin: 0 0 30px;
-  color: #056DA2;
+  margin: 10px 0 20px;
   border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 #block-detail h3 {
-  color: #056DA2;
+  color: #056da2;
 }
 #block-detail .about p {
   font-size: 1.15em;
   color: #555;
   font-style: italic;
+}
+#block-detail .section-title {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+#block-detail .section-title h2 {
+  margin-top: 10px;
+}
+#block-detail .konkurs-list li {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 4px;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+}
+#block-detail .konkurs-list li:hover {
+  border-color: #6dda6d;
+  background: #fbfefb;
+}
+#block-detail .konkurs-list h5 {
+  font-size: 16px;
+  margin: 0;
+}
+#block-detail .konkurs-list h5 a {
+  color: #0b618c;
+}
+#block-detail .konkurs-list h5 a:hover {
+  text-decoration: none;
+}
+#block-detail .konkurs-list h5 small {
+  display: block;
 }
 #block-detail .form-prof,
 #block-detail .form-author {
@@ -7918,6 +7974,19 @@ footer p {
 #block-detail .form-prof + .form-prof,
 #block-detail .form-author + .form-author {
   margin-top: 20px;
+}
+/* 09. PROFILE SECTION ================================================== */
+#block-profile .konkurs-list h5 {
+  font-size: 16px;
+}
+#block-profile .konkurs-list h5 a {
+  color: #0b618c;
+}
+#block-profile .konkurs-list h5 a:hover {
+  text-decoration: none;
+}
+#block-profile .konkurs-list h5 small {
+  display: block;
 }
 /* 09. MEDIA QUERIES FOR MOBILE SETTINGS ================================================== */
 @media (max-width: 480px) {
@@ -7965,19 +8034,19 @@ footer p {
 }
 @media (min-width: 1170px) {
   header {
-    padding-top: 70px;
+    padding-top: 60px;
   }
   .page-header h2 {
     font-size: 2.1em;
   }
   .navbar-top .navbar-brand {
-    padding: 25px;
+    padding: 20px 25px;
   }
   .navbar-top .navbar-collapse {
-    margin-top: 10px;
+    margin-top: 6px;
   }
   .navbar-top .navbar-nav .btn-login {
-    margin: 10px 0;
+    margin: 11px 0;
   }
   .header-title {
     padding: 30px 0 40px;

@@ -5,35 +5,32 @@ block content
     header
         .container
             .page-title
-                h2 Конкурсы
-                p Конкурсы проводится в целях привлечения внимания общества к вопросам развития культуры, сохранения культурно-исторического наследия
+                h2 План конкурсов на 2013-2014 учебный год
+                p.
+                    Конкурсы проводится в целях привлечения внимания общества к вопросам развития культуры, сохранения культурно-исторического наследия.<br>
+                    В течение всего учебного года вы можете участвовать в конкурсах
     #block-detail.content-block
         .container
             .row
                 .col-lg-9
-                    h2= section.title
-                    p.lead #{section.description}
-                    hr
-                    table.table.table-striped
-                        thead
-                            tr
-                                th Название конкурса
-                                th Даты&nbsp;проведения
-                                th
-                                th
-                        tbody
-                            each product in products
-                                tr
-                                    td: a(href="/product/#{product.url}")= product.title
-                                    td
-                                        if product.start
-                                            |#{product.start}-#{product.end}
-                                    td
+                    .section-title
+                        h2= section.title
+                        p.lead #{section.description}
+                    ul.konkurs-list.list-unstyled.clearfix
+                        each product in products
+                            li
+                                .row
+                                    .col-lg-9
+                                        h5
+                                            small Исследовательский конкурс<br>
+                                            a(href="/product/#{product.url}")= product.title
+                                    .col-lg-3.text-right
                                         if product.price
-                                            |#{product.price}&nbsp;руб.
-                                    td: a(href="/product/#{product.url}", class="btn btn-success") Заявка
+                                            a(href="/product/#{product.url}", class="btn btn-success btn-sm") #{product.price}&nbsp;руб.
+                                        else
+                                            a(href="/product/#{product.url}", class="btn btn-success btn-sm") Заявка
                 .col-lg-3
-                    .panel.panel-success
+                    .panel.panel-primary
                         .panel-heading: h4 Блоки конкурсов
                         .list-group
                             each item in sections

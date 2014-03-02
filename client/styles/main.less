@@ -12,19 +12,20 @@
     10. Media Queries for iPad/Tablet
 
 */
-
 /* 01. IMPORT FRAMEWORKS AND PLUGINS ================================================== */
-
 @import '../bower_components/bootstrap/less/bootstrap';
 @import "../bower_components/font-awesome/less/font-awesome";
 @import "../bower_components/yamm3/yamm/yamm";
 
-
 /* 02. VARIABLES ================================================== */
 
 @FontAwesomePath: "../bower_components/font-awesome/font";
-@font-family-base: @font-family-serif;
-@primary-bg: #1192d3;
+//@font-family-base: @font-family-serif;
+@brand-primary: #1192d3;
+@brand-success: #6dda6d;
+@brand-warning: #f0ad4e;
+@brand-danger: #d9534f;
+@brand-info: #5bc0de;
 @primary-link: #b3e1f8;
 @grid-float-breakpoint: @screen-desktop;
 @border-radius-base: 1px;
@@ -37,7 +38,7 @@
   padding: 40px 0;
   &.block-color {
     color: #fff;
-    background: @primary-bg;
+    background: @brand-primary;
   }
   &.block-carousel .carousel {
     padding: 0 0 80px;
@@ -58,15 +59,21 @@
 
 h3 { font-size: 21px; }
 
-fieldset { margin-bottom: 15px; }
+fieldset {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
 legend {
   font-weight: 500;
   border: none;
-  color: #056DA2;
-  margin-bottom: 10px;
+  color: #056da2;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.nav-tabs { margin: 20px 0 30px; }
+.nav-tabs { margin: 20px 0 0; }
+
 .nav-tabs > li > a {
   font-size: 16px;
   padding-top: 10px;
@@ -74,6 +81,13 @@ legend {
   font-weight: bold;
   border-radius: 0;
   color: #999;
+}
+
+.tab-content {
+  padding: 20px 30px 30px 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
 }
 
 .well {
@@ -143,23 +157,22 @@ legend {
   opacity: 1;
 }
 
-
 /* 05. HEADER SECTION ================================================== */
 
 header {
   font-size: 1em;
   padding-top: 52px;
-  background-color: @primary-bg;
+  background-color: @brand-primary;
   color: #fff;
   border-bottom: 10px solid #eee;
 }
-
 
 // Navbar
 
 .navbar-top {
   font-size: 1em;
-  background-color: @primary-bg;
+  //  background-color: @brand-primary;
+  background-color: darken(@brand-primary, 6%);
   border-radius: 0;
   border-bottom-color: #0f7db4;
   box-shadow: 0 1px 1px rgba(255, 255, 255, .15);
@@ -170,7 +183,7 @@ header {
 .navbar-top .navbar-collapse {
   margin-top: 0;
   padding: 0;
-  border-color: @primary-bg;
+  border-color: @brand-primary;
 }
 
 .navbar-top .navbar-brand {
@@ -178,9 +191,9 @@ header {
   margin-left: 0;
   padding: 15px;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.65em;
   font-weight: bold;
-  background-color: darken(@primary-bg, 6.5%);
+  background-color: darken(@brand-primary, 9%);
 }
 
 .navbar-top .navbar-nav > li > a {
@@ -200,11 +213,11 @@ header {
 .navbar-top .navbar-nav > .active > a,
 .navbar-top .navbar-nav > .active > a:hover {
   color: #fff;
-  background-color: darken(@primary-bg, 6.5%);
+  background-color: darken(@brand-primary, 9%);
 }
 
 .navbar-top .navbar-toggle {
-  border-color: darken(@primary-bg, 6.5%);
+  border-color: darken(@brand-primary, 9%);
 }
 
 .navbar-top .navbar-toggle span {
@@ -213,17 +226,35 @@ header {
 
 .navbar-top .navbar-toggle:hover {
   color: #fff;
-  background-color: darken(@primary-bg, 6.5%);
+  background-color: darken(@brand-primary, 9%);
 }
 
 .navbar-top .navbar-nav .btn-login {
   margin: 9px 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: .85em;
   text-transform: none;
   font-weight: normal;
-  background-color: #0f7db4 !important;
-  &:hover { border-color: #fff; }
+}
+
+.navbar-top .navbar-nav .btn-login.btn-success {
+  background-color: @brand-success !important;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.07);
+  &:hover {
+    background-color: darken(@brand-success, 9%) !important;
+  }
+}
+
+.navbar-top .navbar-nav .btn-login.btn-primary {
+  background-color: @brand-primary !important;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.07);
+  border-color: #fff;
+  &:hover {
+    background-color: darken(@brand-primary, 9%) !important;
+  }
 }
 
 .yamm-content ul li p strong {
@@ -239,7 +270,6 @@ header {
   border: 0;
   padding: 15px;
 }
-
 
 // Slider
 
@@ -278,12 +308,12 @@ header {
     color: #fff;
     box-shadow: none;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .07);
-    background: #6DDA6D;
+    background: #6dda6d;
   }
 }
 
 #headerCarousel {
-  box-shadow: 0 0 15px rgba(0,0,0,.25);
+  box-shadow: 0 0 15px rgba(0, 0, 0, .25);
   background: #fff;
   .carousel-inner .container {
     position: relative;
@@ -366,7 +396,6 @@ header {
   }
 }
 
-
 /* 06. COURSES SECTION ================================================== */
 
 #block-courses { padding-bottom: 100px; }
@@ -393,7 +422,6 @@ header {
   }
 }
 
-
 #accordion .panel { margin-top: 20px; }
 
 #accordion .panel .panel-heading { cursor: pointer; }
@@ -406,8 +434,6 @@ header {
   }
   &:hover { background: #f8fbf6; }
 }
-
-
 
 /* 06. CUSTOMERS SECTION ================================================== */
 
@@ -443,8 +469,6 @@ header {
   .icon-stack-base { color: #266b8d; }
   .icon-comment { color: #b3e1f8; }
 }
-
-
 
 /* 07. NEWS SECTION ================================================== */
 
@@ -483,18 +507,17 @@ header {
     small { color: #d6edc1; }
   }
   .news-item a { color: #444; }
-  .news-item a:hover { color: #fff;  }
+  .news-item a:hover { color: #fff; }
   .news-title { font-size: 1.3em; }
   .row > div > * { border-bottom: 1px solid #efefef; }
   .row > div > *:last-child { border-bottom: none; }
 }
 
-
-
 .panel-poll {
   color: #333;
   border: 4px solid #ffd347;
 }
+
 .panel-poll .panel-body { padding-top: 0; }
 
 .panel-articles {
@@ -510,7 +533,6 @@ header {
 
 /* 07. FOOTER SECTION ================================================== */
 
-
 #block-seo {
   padding: 100px 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -519,7 +541,6 @@ header {
   h1 { text-align: center; }
   p { font-size: 1.2em; }
 }
-
 
 #map {
   height: 420px;
@@ -532,7 +553,7 @@ footer {
   h5 {
     margin-bottom: 30px;
     font-size: 1.6em;
-    color: #056DA2;
+    color: #056da2;
     small {
       display: block;
       font-size: 60%;
@@ -544,24 +565,50 @@ footer {
   }
 }
 
-
 /* 08. DETAIL SECTION ================================================== */
 
-
 #block-detail {
+  background: #fafafa;
   h1 {
-    font-size: 2.3em;
+    font-size: 2.1em;
     line-height: 1;
-    margin: 0 0 30px;
-    color: #056DA2;
+    margin: 10px 0 20px;
     border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
-  h3 { color: #056DA2; }
+  h3 { color: #056da2; }
   .about p {
     font-size: 1.15em;
     color: #555;
     font-style: italic;
+  }
+  .section-title {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    h2 { margin-top: 10px; }
+  }
+  .konkurs-list {
+    li {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 4px;
+      border: 1px solid #eee;
+      border-left-width: 5px;
+      &:hover {
+        border-color: @brand-success;
+        background: lighten(@brand-success, 35%);
+      }
+    }
+    h5 {
+      font-size: 16px;
+      margin: 0;
+      a {
+        color: darken(@link-color, 15%);
+        &:hover { text-decoration: none; }
+      }
+      small { display: block; }
+    }
   }
   .form-prof, .form-author {
     border-left: 4px solid #eee;
@@ -574,9 +621,22 @@ footer {
   }
 }
 
+/* 09. PROFILE SECTION ================================================== */
+
+#block-profile {
+  .konkurs-list {
+    h5 {
+      font-size: 16px;
+      a {
+        color: darken(@link-color, 15%);
+        &:hover { text-decoration: none; }
+      }
+      small { display: block;  }
+    }
+  }
+}
 
 /* 09. MEDIA QUERIES FOR MOBILE SETTINGS ================================================== */
-
 
 @media (max-width: 480px) {
   header {
@@ -584,8 +644,11 @@ footer {
     padding-left: 15px;
     padding-right: 15px;
   }
+
   .header-title { padding: 20px 0 0; }
+
   .header-description { padding: 10px 0 40px; }
+
   .btn-header {
     display: block;
     padding: 7px 11px;
@@ -594,7 +657,9 @@ footer {
   }
 
   #block-customers .item p { font-size: 1em; }
+
   #newsCarousel .caption h4 { font-size: 2em; }
+
   .news-list .news-title { font-size: 1em; }
 }
 
@@ -603,6 +668,7 @@ footer {
   .container > .navbar-collapse {
     margin: 0;
   }
+
   .navbar-nav {
     margin-left: 0;
     right: 0;
@@ -623,18 +689,19 @@ footer {
 
 @media (min-width: @container-lg-desktop) {
   header {
-    padding-top: 70px;
+    padding-top: 60px;
   }
 
   .navbar-top {
-
   }
 
   .page-header h2 { font-size: 2.1em; }
 
-  .navbar-top .navbar-brand { padding: 25px; }
-  .navbar-top .navbar-collapse { margin-top: 10px; }
-  .navbar-top .navbar-nav .btn-login { margin: 10px 0; }
+  .navbar-top .navbar-brand { padding: 20px 25px; }
+
+  .navbar-top .navbar-collapse { margin-top: 6px; }
+
+  .navbar-top .navbar-nav .btn-login { margin: 11px 0; }
 
   .header-title {
     padding: 30px 0 40px;
@@ -666,9 +733,6 @@ footer {
   }
 
 }
-
-
-
 
 /* 10. MEDIA QUERIES FOR TABLET SETTINGS ================================================== */
 

@@ -19,11 +19,11 @@ nav.navbar.navbar-top.navbar-fixed-top.yamm(role="navigation")
             ul.nav.navbar-nav.pull-right.hidden-sm.hidden-xs
                 if (user)
                     li(class=(path == '/profile')?'active':'')
-                        a(href="/profile", class="btn btn-login navbar-btn") #{user.username}
+                        a(href="/profile", class="btn btn-login navbar-btn btn-primary") #{user.username}
                     li
                         a(href="", onclick="$('<form method=POST action=/logout>').submit();return false", class="btn btn-login navbar-btn") Выйти
                 else
                     li(class=(path == '/login')?'active':'')
-                        a(href="/login", class="btn btn-login navbar-btn")
+                        a(href="/login", class="btn btn-login btn-success navbar-btn")
                             i.icon-user
                             | &nbsp;Войти

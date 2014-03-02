@@ -1,11 +1,7 @@
 {
   "port": 3000,
   "mongoose": {
-    "uri": "mongodb://ec2-54-197-241-95.compute-1.amazonaws.com",
-    "database": "dqfbjpdmlqt3n",
-    "user": "dgshoztjojwhmx",
-    "password": "Dcjq_2LUMmalxWBXBqmyq27E8w",
-    "port": "5432",
+    "uri": "mongodb://heroku_app22405641:8qt1c2kliji11bpmf8c1ljnovb@ds033669.mongolab.com:33669/heroku_app22405641",
     "options": {
       "server": {
         "socketOptions": {

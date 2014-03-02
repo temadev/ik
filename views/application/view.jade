@@ -1,0 +1,34 @@
+extends ../layout
+block title
+    | Личный кабинет
+block content
+    header
+        .container
+            .page-title
+                h2 Мои заявки
+    #block-profile.content-block
+        .container
+            h1= application.title
+            hr
+            .row
+                .col-lg-9
+                    dl.dl-horizontal
+                        dt Название конкурса
+                        dd= application.product.title
+                        dt Номинация
+                        dd ---
+                        dt Дата публикации
+                        dd= application.created
+                        dt Статус работы
+                        dd= application.status
+                        dt Оплата
+                        dd= application.payment
+                .col-lg-3
+                    .well
+                        if (application.payment == '0')
+                            p Нужно оплатить #{application.product.price} руб.
+                            button.btn.btn-success.btn-lg Оплатить
+                        else
+                            p Результаты будут доступны в течение 30 дней после публикации работы
+                            p= dateEnd
+                            a.btn.btn-primary.btn-lg.disabled(href="#") Скачать диплом

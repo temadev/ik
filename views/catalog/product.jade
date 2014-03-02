@@ -1,40 +1,27 @@
 extends ../layout
 block title
-    | Каталог
+    = product.title
 block content
     header
         .container
             .page-title
-                h2 Название рубрики этого конкурса
-                p Конкурсы проводится в целях привлечения внимания общества к вопросам развития культуры, сохранения культурно-исторического наследия
+                h2= section.title
+                p= section.description
     #block-detail.content-block
         .container
             .row
-                .col-lg-4
-                    .well
-                        button(class="btn btn-success btn-lg btn-block", data-toggle="modal", data-target="#modalRequest") Подать заявку
-                        hr
-                        dl
-                            dt Даты проведения
-                            dd
-                                ul
-                                    li Прием заявок:&nbsp;
-                                        if product.start
-                                            | #{product.start}-#{product.end}
-                                    li Итоги конкурса:
-                        if product.price
-                            dl
-                                dt Стоимость участия — #{product.price} руб.
-                .col-lg-8
+                .col-lg-9
                     h1= product.title
                     .row.about
-                        .col-lg-4
+                        .col-lg-3
                             img(src="images/konkurs-1.jpg", alt="", class="img-thumbnail")
-                        .col-lg-8
+                        .col-lg-9
                             p= product.description
+                            p Стоимость участия — #{product.price} руб.
                     ul#tabs.nav.nav-tabs
                         li.active: a(href="#tab1", data-toggle="tab") Общие положения
                         li: a(href="#tab2", data-toggle="tab") Порядок проведения конкурса
+                        li: a(href="#tab3", data-toggle="tab") Отправить заявку
                     .tab-content
                         #tab1.tab-pane.active
                             h3 Задачи конкурса
@@ -46,19 +33,19 @@ block content
                                 li Создание условий для сохранения и развития многонационального культурного потенциала в областях Российской Федерации.
                                 li Обеспечение реализации плана Минкультуры России во исполнение культурных мероприятий, обеспечение культурного обмена и сотрудничества в сфере национальных культур. Модернизация культуры в муниципальных образованиях Российской Федерации.
                             h3 Номинации конкурса
-                            p Разработка игровой программы, мероприятия, занятия или урока на духовную и культурную тематику:
+                            p= product.nomination_title
                             ul
-                                li Духовно-нравственное воспитание в дошкольном учреждении
-                                li Духовно-нравственное воспитание в начальной школе
-                                li Духовно-нравственное воспитание в средних классах
-                                li Духовно-нравственное воспитание в старших классах
-                                li Духовно-нравственное воспитание в учреждении дополнительного образования
-                                li Духовно-нравственное воспитание в воскресной школе
+                                each nomination in product.nominations
+                                    li= nomination
+                            h3 Категории конкурса
+                            ul
+                                each category in product.categories
+                                    li= category
                             h3 Участники конкурса
                             ul
-                                li Педагоги учреждений дошкольного и начального образования, средних общеобразовательных школ, гимназий, лицеев, кадетских корпусов, учреждений дополнительного образования, учебных заведений начального, среднего, дополнительного профессионального образования
-                                li Образовательные, научные, общественные и коммерческие организации, органы государственной власти
-                                li Граждане и организации Российской Федерации, государств-участников СНГ и стран дальнего зарубежья
+                                each user in product.users
+                                    li= user
+
                         #tab2.tab-pane
                             h3 Порядок проведения конкурса
                             ul
@@ -80,131 +67,131 @@ block content
                                 li Победители и призёры в каждой номинации награждаются Дипломами I, II, III степени
                                 li Все участники Конкурса, представившие материалы на конкурс получают Сертификат участника
                                 li Организационным комитетом Конкурса, поддерживающими организациями, спонсорами могут устанавливаться другие формы и методы поощрения его участников и победителей
-                    #modalRequest.modal.fade(tabindex="-1", role="dialog", aria-labelledby="modalRequestLabel", aria-hidden="true")
-                        .modal-dialog
-                            .modal-content
-                                .modal-header
-                                    button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
-                                    h4#modalRequestLabel.modal-title Заявка на участие в конкурсе
-                                .modal-body
+
+                        #tab3.tab-pane
+                            form.form(action="/application/create", method="POST")
+                                input(type="hidden", name="id", value="#{product._id}")
+
+                                legend Конкурсная работа
+                                .form-group
+                                    label.sr-only(for="formTitle") Название работы
+                                    input#formTitle.form-control(type="text", name="title", placeholder="Название работы")
+                                .form-group
+                                    label(for="nomination") Выберите номинацию из списка
+                                    select#nomination.form-control
+                                        option Духовно-нравственное воспитание в дошкольном учреждении
+                                        option Духовно-нравственное воспитание в начальной школе
+                                        option Духовно-нравственное воспитание в средних классах
+                                        option Духовно-нравственное воспитание в старших классах
+                                        option Духовно-нравственное воспитание в учреждении дополнительного образования
+                                        option Духовно-нравственное воспитание в воскресной школе
+                                .form-group
+                                    label(for="formInputFile") Конкурсная работа
+                                    input#formInputFile(type="file")
+                                    p.help-block Создайте архив файлов с материалами конкурса и загрузите его к нам на сервер
+                                hr
+
+                                legend Авторы и руководители проекта
+                                    button.btn.btn-default.btn-xs + добавить
+                                .form-author
                                     .row
-                                        .col-lg-12
-                                            form.form
-                                                fieldset
-                                                    legend Конкурсная работа
+                                        .col-lg-8
+                                            .row
+                                                .col-lg-6
                                                     .form-group
-                                                        label.sr-only(for="formTitle") Название работы
-                                                        input#formTitle.form-control(type="text", placeholder="Название работы")
+                                                        label.sr-only(for="role") Роль в проекте
+                                                        select#role.form-control
+                                                            option Автор
+                                                            option Руководитель
+                                            .row
+                                                .col-lg-4
                                                     .form-group
-                                                        label(for="nomination") Выберите номинацию из списка
-                                                        select#nomination.form-control
-                                                            option Духовно-нравственное воспитание в дошкольном учреждении
-                                                            option Духовно-нравственное воспитание в начальной школе
-                                                            option Духовно-нравственное воспитание в средних классах
-                                                            option Духовно-нравственное воспитание в старших классах
-                                                            option Духовно-нравственное воспитание в учреждении дополнительного образования
-                                                            option Духовно-нравственное воспитание в воскресной школе
+                                                        label.sr-only(for="formAuthorLastname") Фамилия
+                                                        input#formAuthorLastname.form-control.input-sm(placeholder="Фамилия")
+                                                .col-lg-4
                                                     .form-group
-                                                        label(for="formInputFile") Конкурсная работа
-                                                        input#formInputFile(type="file")
-                                                        p.help-block Создайте архив файлов с материалами конкурса и загрузите его к нам на сервер
-                                                hr
-                                                fieldset
-                                                    legend Авторы и руководители проекта
-                                                        button.btn.btn-default.btn-xs + добавить
-                                                    .form-author
-                                                        .row
-                                                            .col-lg-8
-                                                                .row
-                                                                    .col-lg-6
-                                                                        .form-group
-                                                                            label.sr-only(for="role") Роль в проекте
-                                                                            select#role.form-control
-                                                                                option Автор
-                                                                                option Руководитель
-                                                                .row
-                                                                    .col-lg-4
-                                                                        .form-group
-                                                                            label.sr-only(for="formAuthorLastname") Фамилия
-                                                                            input#formAuthorLastname.form-control.input-sm(placeholder="Фамилия")
-                                                                    .col-lg-4
-                                                                        .form-group
-                                                                            label.sr-only(for="formAuthorFirstname") Имя
-                                                                            input#formAuthorFirstname.form-control.input-sm(placeholder="Имя")
-                                                                    .col-lg-4
-                                                                        .form-group
-                                                                            label.sr-only(for="formAuthorMiddlename") Отчество
-                                                                            input#formAuthorMiddlename.form-control.input-sm(placeholder="Отчество")
-                                                                .row
-                                                                    .col-lg-5
-                                                                        .form-group
-                                                                            label.sr-only(for="formAuthorProfession") Должность
-                                                                            input#formAuthorProfession.form-control.input-sm(placeholder="Должность")
-                                                                    .col-lg-3
-                                                                        .form-group
-                                                                            label.sr-only(for="formAuthorAge") Возраст
-                                                                            input#formAuthorAge.form-control.input-sm(placeholder="Возраст")
-                                                            .col-lg-4
-                                                                .well
-                                                                    strong Фамилия Имя Отчество<br>
-                                                                    | 10 лет<br>
-                                                                    | Должность<br>
-                                                                    | Место работы
-                                                hr
-                                                fieldset
-                                                    legend Дополнительная информация
-                                                    .row
-                                                        .col-lg-12
-                                                            .checkbox
-                                                                label
-                                                                    input(type="checkbox", checked)
-                                                                    | Требуется печатная версия (+100 руб.)
-                                                    .row
-                                                        .col-lg-4
-                                                            .form-group
-                                                                label.sr-only(for="formQuantity") Количество экземпляров
-                                                                input#formQuantity.form-control(type="text", placeholder="Количество экземпляров")
-                                                    .row
-                                                        .col-lg-4
-                                                            .form-group
-                                                                label.sr-only(for="formCity") Город
-                                                                input#formCity.form-control(type="text", placeholder="Город")
-                                                        .col-lg-4
-                                                            .form-group
-                                                                label.sr-only(for="formIndex") Индекс
-                                                                input#formIndex.form-control(type="text", placeholder="Индекс")
-                                                    .row
-                                                        .col-lg-12
-                                                            .form-group
-                                                                label.sr-only(for="formAddress") Адрес
-                                                                textarea#formAddress.form-control(rows="2", placeholder="Адрес")
-                                                    .row
-                                                        .col-lg-6
-                                                            .form-group
-                                                                label.sr-only(for="formCompany") Название организации
-                                                                input#formCompany.form-control(type="text", placeholder="Название организации")
-                                                hr
-                                                fieldset
-                                                    legend Способ оплаты
-                                                    .row
-                                                        .col-lg-12
-                                                            .form-group
-                                                                .radio
-                                                                    label
-                                                                        input#optionsRadios1(type="radio", name="optionsRadios", value="option1", checked)
-                                                                        | Банковский перевод
-                                                                .radio
-                                                                    label
-                                                                        input#optionsRadios2(type="radio", name="optionsRadios", value="option2")
-                                                                        | Оплата банковской картой
-                                                                .radio
-                                                                    label
-                                                                        input#optionsRadios3(type="radio", name="optionsRadios", value="option3")
-                                                                        | Электронные деньги
-                                                hr
-                                                .text-right
-                                                    .lead Стоимость участия — 500 руб.<br>
-                                                        | Печатная версия — 100 руб.<br>
-                                                        | <strong>Всего — 600 руб.</strong>
-                                .modal-footer
-                                    button.btn.btn-primary.btn-lg(type="submit") Отправить заявку
+                                                        label.sr-only(for="formAuthorFirstname") Имя
+                                                        input#formAuthorFirstname.form-control.input-sm(placeholder="Имя")
+                                                .col-lg-4
+                                                    .form-group
+                                                        label.sr-only(for="formAuthorMiddlename") Отчество
+                                                        input#formAuthorMiddlename.form-control.input-sm(placeholder="Отчество")
+                                            .row
+                                                .col-lg-5
+                                                    .form-group
+                                                        label.sr-only(for="formAuthorProfession") Должность
+                                                        input#formAuthorProfession.form-control.input-sm(placeholder="Должность")
+                                                .col-lg-3
+                                                    .form-group
+                                                        label.sr-only(for="formAuthorAge") Возраст
+                                                        input#formAuthorAge.form-control.input-sm(placeholder="Возраст")
+                                        .col-lg-4
+                                            .well
+                                                strong Фамилия Имя Отчество<br>
+                                                | 10 лет<br>
+                                                | Должность<br>
+                                                | Место работы
+                                hr
+
+                                legend Дополнительная информация
+                                .row
+                                    .col-lg-12
+                                        .checkbox
+                                            label
+                                                input(type="checkbox", checked)
+                                                | Требуется печатная версия (+100 руб.)
+                                .row
+                                    .col-lg-4
+                                        .form-group
+                                            label.sr-only(for="formQuantity") Количество экземпляров
+                                            input#formQuantity.form-control(type="text", placeholder="Количество экземпляров")
+                                .row
+                                    .col-lg-4
+                                        .form-group
+                                            label.sr-only(for="formCity") Город
+                                            input#formCity.form-control(type="text", placeholder="Город")
+                                    .col-lg-4
+                                        .form-group
+                                            label.sr-only(for="formIndex") Индекс
+                                            input#formIndex.form-control(type="text", placeholder="Индекс")
+                                .row
+                                    .col-lg-12
+                                        .form-group
+                                            label.sr-only(for="formAddress") Адрес
+                                            textarea#formAddress.form-control(rows="2", placeholder="Адрес")
+                                .row
+                                    .col-lg-6
+                                        .form-group
+                                            label.sr-only(for="formCompany") Название организации
+                                            input#formCompany.form-control(type="text", placeholder="Название организации")
+                                hr
+
+                                legend Способ оплаты
+                                .row
+                                    .col-lg-12
+                                        .form-group
+                                            .radio
+                                                label
+                                                    input#optionsRadios1(type="radio", name="optionsRadios", value="option1", checked)
+                                                    | Банковский перевод
+                                            .radio
+                                                label
+                                                    input#optionsRadios2(type="radio", name="optionsRadios", value="option2")
+                                                    | Оплата банковской картой
+                                            .radio
+                                                label
+                                                    input#optionsRadios3(type="radio", name="optionsRadios", value="option3")
+                                                    | Электронные деньги
+                                hr
+                                .text-right
+                                    .lead Стоимость участия — 500 руб.<br>
+                                        | Печатная версия — 100 руб.<br>
+                                        | <strong>Всего — 600 руб.</strong>
+
+                                button.btn.btn-primary.btn-lg(type="submit") Отправить заявку
+                .col-lg-3
+                    .panel.panel-primary
+                        .panel-heading: h4 Блоки конкурсов
+                        .list-group
+                            each item in sections
+                                a(href="/catalog/#{item.url}", class=(item.url == section.url)?'list-group-item active':'list-group-item') #{item.title}

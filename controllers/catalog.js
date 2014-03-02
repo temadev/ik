@@ -39,7 +39,16 @@ module.exports = {
           next(new HttpError(404, "Product not found"));
           return;
         }
-        res.render('catalog/product', { sections: sections, product: product });
+        Section.findOne({ _id: product.sections[0]}, function (err, section) {
+          if (err) throw err;
+          if (!section) {
+            next(new HttpError(404, "Product main section not found"));
+            return;
+          }
+          console.log(product);
+          res.render('catalog/product', { sections: sections, product: product, section: section });
+        });
+
       });
     });
   }

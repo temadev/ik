@@ -21,13 +21,15 @@ var productSchema = new Schema({
   sections: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Card',
+      ref: 'Section',
       required: true
     }
   ],
   description: { type: String, 'default': '' },
-  start: { type: String, 'default': '' },
-  end: { type: String, 'default': '' }
+  nomination_title: { type: String, 'default': '' },
+  nominations: [{ type: String, 'default': '' }],
+  categories: [{ type: String, 'default': '' }],
+  users: [{ type: String, 'default': '' }]
 });
 
 productSchema.methods.checkUrl = function (url) {

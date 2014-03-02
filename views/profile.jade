@@ -2,11 +2,31 @@ extends layout
 block title
     | Личный кабинет
 block content
-    .container
-        .page-header
-            h1 Личный кабинет
-        dl
-            dt username
-            dd= user.username
-            dt role
-            dd= user.role
+    header
+        .container
+            .page-title
+                h2 Личный кабинет
+            dl.dl-horizontal
+                dt username
+                dd= user.username
+                dt role
+                dd= user.role
+    #block-profile.content-block
+        .container
+            h1 Мои конкурсы
+            hr
+            table.table.table-hover.konkurs-list
+                thead
+                    tr
+                        th Название работы
+                        th Статус
+                        th Оплата
+                tbody
+                    each application in applications
+                        tr
+                            td
+                                h5
+                                    a(href="/application/view/#{application._id}")= application.title
+                                    small= application.product.title
+                            td= application.status
+                            td= application.payment

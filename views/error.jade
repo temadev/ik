@@ -2,6 +2,11 @@ extends layout
 block title
     = error.message
 block content
-    section.container
-        h2 Извините произошла ошибка
-        p= error.message
+    header
+        .container
+            .page-title
+                h2 Извините произошла ошибка
+    #block-error.content-block
+        .container
+            h2 Извините произошла ошибка
+            p= error.message
