@@ -1,4 +1,4 @@
-var checkAuth = require('middleware/CheckAuth'),
+var checkAuth = require('middleware/checkAuth'),
   setNav = require('middleware/navigation').currentPath;
 
 var mainCtrl = require('controllers/main'),
