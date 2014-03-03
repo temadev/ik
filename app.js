@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var config = require('./config');
+var config = require('config');
 
 var express = require('express'),
   http = require('http'),
@@ -66,6 +66,7 @@ app.use(function(err, req, res, next) {
   }
 });
 
-http.createServer(app).listen(config.get('port'), function(){
-  log.info('Express server listening on port ' + config.get('port'));
+var port = process.env.PORT || config.get('port');
+http.createServer(app).listen(port, function(){
+  log.info('Express server listening on port ' + port);
 });
