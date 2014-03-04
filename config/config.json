@@ -10,6 +10,9 @@
       }
     }
   },
+  "redis": {
+    "url": "redis://nodejitsu:nodejitsudb4081129245.redis.irstack.com:f327cfe980c971946e80b8e975fbebb4@nodejitsudb4081129245.redis.irstack.com:6379"
+  },
   "session": {
     "secret": "→°°°SECRET°°°←",
     "key": "sid",

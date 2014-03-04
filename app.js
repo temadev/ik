@@ -33,12 +33,31 @@ app.use(require('less-middleware')({ src: path.join(__dirname, 'client') }));
 app.use(express.static(path.join(__dirname, 'client')));
 
 var MongoStore = require('connect-mongo')(express);
+//var RedisStore = require('connect-redis')(express);
+
+var MongoClient = require("mongodb").MongoClient;
+var Yams = require('yams');
+
+var store = new Yams(function (callback) {
+  //this will be called once, you must return the collection sessions.
+  MongoClient.connect('mongodb://nodejitsu:82dd51b1327aa3bfefcc21fe48edaddb@troup.mongohq.com:10014/nodejitsudb9577575034', function (err, db) {
+    if (err) return callback(err);
+
+    var sessionsCollection = db.collection('sessions')
+
+    //use TTL in mongodb, the document will be automatically expired when the session ends.
+    sessionsCollection.ensureIndex({expires:1}, {expireAfterSeconds: 0}, function(){});
+
+    callback(null, sessionsCollection);
+  });
+});
 
 app.use(express.session({
   secret: config.get('session:secret'),
   key: config.get('session:key'),
   cookie: config.get('session:cookie'),
-  store: new MongoStore({ mongoose_connection: mongoose.connection })
+  store: store
+//  store: new RedisStore({ url: config.get('redis:url') })
 }));
 
 app.use(require('middleware/sendHttpError'));
