@@ -12,18 +12,18 @@ block content
             .row
                 .col-lg-9
                     h1= product.title
-                    .row.about
-                        .col-lg-3
-                            img(src="images/konkurs-1.jpg", alt="", class="img-thumbnail")
-                        .col-lg-9
-                            p= product.description
-                            p Стоимость участия — #{product.price} руб.
                     ul#tabs.nav.nav-tabs
                         li.active: a(href="#tab1", data-toggle="tab") Общие положения
                         li: a(href="#tab2", data-toggle="tab") Порядок проведения конкурса
                         li: a(href="#tab3", data-toggle="tab") Отправить заявку
                     .tab-content
                         #tab1.tab-pane.active
+                            .row.about
+                                .col-lg-10
+                                    p= product.description
+                                    p Стоимость участия — #{product.price} руб.
+                                .col-lg-2
+                                    img(src="images/konkurs-1.jpg", alt="", class="img-thumbnail")
                             h3 Задачи конкурса
                             ul
                                 li Изыскание, исследование и пропаганда духовного, культурного и нравственного наследия народов Российской Федерации.
@@ -32,16 +32,18 @@ block content
                                 li Сохранение культурной самобытности народов и создание условий для равной доступности культурных благ, развития и реализации культурного и духовного потенциала народов России и ближнего зарубежья, повышение роли культуры в современном мире.
                                 li Создание условий для сохранения и развития многонационального культурного потенциала в областях Российской Федерации.
                                 li Обеспечение реализации плана Минкультуры России во исполнение культурных мероприятий, обеспечение культурного обмена и сотрудничества в сфере национальных культур. Модернизация культуры в муниципальных образованиях Российской Федерации.
-                            h3 Номинации конкурса
+                            h3 Темы конкурсных работ
                             p= product.nomination_title
                             ul
                                 each nomination in product.nominations
                                     li= nomination
-                            h3 Категории работ
-                            ul
-                                each category in product.categories
-                                    li= category
-                            h3 Участники конкурса
+                            blockquote
+                                p Конкурсные работы должны соответствовать одному из слудующих направлений:
+                                ul
+                                    each category in product.categories
+                                        li= category
+                            h3 Категории участников
+                            p Для участия в конкурсе допускаются следующие группы участников:
                             ul
                                 each user in product.users
                                     li= user

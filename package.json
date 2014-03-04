@@ -16,5 +16,9 @@
     "crypto": "0.0.3",
     "async": "~0.2.9",
     "connect-mongo": "~0.4.0"
+  },
+  "subdomain": "noidea-expressapp",
+  "engines": {
+    "node": "0.10.x"
   }
 }

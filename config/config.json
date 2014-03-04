@@ -1,7 +1,7 @@
 {
   "port": 3000,
   "mongoose": {
-    "uri": "mongodb://heroku_app22405641:8qt1c2kliji11bpmf8c1ljnovb@ds033669.mongolab.com:33669/heroku_app22405641",
+    "uri": "mongodb://nodejitsu_noidea:t33d0c5u7ua0fpojd2j47dus2m@ds061548.mongolab.com:61548/nodejitsu_noidea_nodejitsudb8247783053",
     "options": {
       "server": {
         "socketOptions": {

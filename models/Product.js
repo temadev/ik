@@ -25,6 +25,7 @@ var productSchema = new Schema({
       required: true
     }
   ],
+  type: { type: String, 'default': '' },
   description: { type: String, 'default': '' },
   nomination_title: { type: String, 'default': '' },
   nominations: [{ type: String, 'default': '' }],
